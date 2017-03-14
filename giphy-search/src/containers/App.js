@@ -12,9 +12,8 @@ class App extends React.Component {
     return (
       <div>
         <SearchBar onTermChange={this.props.actions.requestGifs} />
-        <GifList gifs={ this.props.gifs } onGifSelect={ selectedGif => this.props.actions.openModal({selectedGif}) } />
-        <GifModal modalIsOpen={ this.props.modalIsOpen }
-                  selectedGif={ this.props.selectedGif }
+        <GifList gifs={ this.props.gifs } onGifSelect={null} /* Here we should pass an arrow function that takes in a selectedGif variable and calls open modal action instead of null*/ />
+        <GifModal /* Check out what props we should pass in the GifModal component */
                   onRequestClose={ () => this.props.actions.closeModal() } />
       </div>
     );
@@ -24,8 +23,7 @@ class App extends React.Component {
 function mapStateToProps(state) {
   return {
     gifs: state.gifs.data,
-    modalIsOpen: state.modal.modalIsOpen,
-    selectedGif: state.modal.selectedGif
+    // Map the redux state to props, which later should be passed to child components (should be two lines)
   };
 }
 

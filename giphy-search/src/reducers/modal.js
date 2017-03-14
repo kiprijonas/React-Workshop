@@ -10,14 +10,12 @@ export default function modal(state = initialState, action) {
     case OPEN_MODAL:
       return {
         ...state,
-        modalIsOpen: true,
-        selectedGif: action.gif.selectedGif
+        // Add code here to open the gif modal window (should be two lines)
       };
     case CLOSE_MODAL:
       return {
         ...state,
-        modalIsOpen: false,
-        selectedGif: null
+        // Add code here to close the gif modal window (should be two lines)
       };
     default:
       return state;

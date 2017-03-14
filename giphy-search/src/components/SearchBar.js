@@ -2,7 +2,7 @@ import React from 'react';
 
 class SearchBar extends React.Component {
   onInputChange(term) {
-    this.props.onTermChange(term);
+    // Should call something passed from parent component
   }
 
   render() {
